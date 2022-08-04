@@ -4,13 +4,13 @@ import { AddItemButton } from "./styles";
 
 type AddNewItemProps = {
 	onAdd(text: string): void;
-	toolingButtonText: string;
+	toggleButtonText: string;
 	dark?: boolean;
 };
 
 export const AddNewItem = (props: AddNewItemProps) => {
 	const [showFrom, setShowFrom] = useState(false);
-	const { onAdd, toolingButtonText, dark } = props;
+	const { onAdd, toggleButtonText, dark } = props;
 
 	if (showFrom) {
 		return (
@@ -25,7 +25,7 @@ export const AddNewItem = (props: AddNewItemProps) => {
 
 	return (
 		<AddItemButton dark={dark} onClick={() => setShowFrom(true)}>
-			{toolingButtonText}
+			{toggleButtonText}
 		</AddItemButton>
 	);
 };

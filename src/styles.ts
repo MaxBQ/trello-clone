@@ -66,6 +66,7 @@ box-shadow: none;
 color: #fff;
 padding: 6px 12px;
 align-items: center;
+cursor: pointer;
 `
 
 export const NewItemInput = styled.input`
@@ -75,4 +76,8 @@ border: none;
 margin-bottom: 0.5rem;
 padding: 0.5rem 1rem;
 width: 100%;
+&:focus{
+        outline: none;
+    }
+
 `
