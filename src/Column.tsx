@@ -1,4 +1,5 @@
 import { FC } from "react";
+import { AddNewItem } from "./AddNewItem";
 import { ColumnContainer, ColumnTitle } from "./styles";
 
 type ColumnProps = {
@@ -11,6 +12,11 @@ export const Column: FC<ColumnProps> = ({ text, children }) => {
 		<ColumnContainer>
 			<ColumnTitle>{text}</ColumnTitle>
 			{children}
+			<AddNewItem
+				toggleButtonText='+ Add another list'
+				onAdd={console.log}
+				dark
+			/>
 		</ColumnContainer>
 	);
 };
