@@ -12,11 +12,11 @@ type List = {
 };
 
 export type AppState = {
-	list: List[];
+	lists: List[];
 };
 
 type AppStateContextProps = {
-	list: List[];
+	lists: List[];
 	getTasksBayListId(id: string): Task[];
 };
 
@@ -33,7 +33,7 @@ export const useAppState = () => {
 };
 
 const appData: AppState = {
-	list: [
+	lists: [
 		{
 			id: "0",
 			list: "To Do",
@@ -53,14 +53,14 @@ const appData: AppState = {
 };
 
 export const AppStateProvider: FC<AppSPChildren> = ({ children }) => {
-	const { list } = appData;
+	const { lists } = appData;
 
 	const getTasksBayListId = (id: string) => {
-		return list.find((list) => list.id === id)?.task || [];
+		return lists.find((list) => list.id === id)?.task || [];
 	};
 
 	return (
-		<AppStateContext.Provider value={{ list, getTasksBayListId }}>
+		<AppStateContext.Provider value={{ lists, getTasksBayListId }}>
 			{children}
 		</AppStateContext.Provider>
 	);
