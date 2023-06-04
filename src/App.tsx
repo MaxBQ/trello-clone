@@ -8,7 +8,7 @@ export const App = () => {
   return (
     <AppContainer>
       {lists.map((list) => (
-        <Column text={list.list} key={list.id} id={list.id} />
+        <Column text={list.text} key={list.id} id={list.id} />
       ))}
       <AddNewItem toggleButtonText="+ Add another list" onAdd={console.log} />
     </AppContainer>
